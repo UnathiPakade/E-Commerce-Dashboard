@@ -5,7 +5,7 @@ import dashboard from "./assets/dashboard.png";
 import facebookLogo from "./assets/Facebook_Logo_Primary.png";
 import googleLogo from "./assets/web_light_rd_na@2x.png";
 import Dashboard from './pages/dashboard.jsx';
-import { FaBolt } from 'react-icons/fa';
+import logo from "./assets/logo (1).png";
 
 const mockUsers = [
   { email: "user@example.com", password: "password123" },
@@ -42,7 +42,7 @@ const LoginPage = () => {
   return (
     <div className="container-fluid flex h-screen p-0">
       <div className="left-section d-none d-md-flex flex-column justify-center align-items-center text-white p-8">
-        <h1 className="logo text-2xl font-bold"><FaBolt className="inline mr-2" />Hiphonic</h1>
+      <img src={logo} alt="logo-img" className="position-absolute mr-2" style={{ top: '2px', left: '2px', margin: '20px', width:'150px', height: 'auto'}}/>
         <div className="dashboard-preview">
           <img src={dashboard} alt="dashboard" className="dashboard max-w-xs h-auto" />
         </div>

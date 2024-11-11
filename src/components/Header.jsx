@@ -65,7 +65,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="dashboard-summary d-flex justify-content-around align-items-center bg-light" style={{ maxHeight: '200px', height: '100%', padding: '0rem' }}>
+      <div className="dashboard-summary d-flex justify-content-around align-items-center bg-light" style={{ maxHeight: '112px', height: '100%', padding: '0rem' }}>
         {filteredCards.length > 0 ? (
           filteredCards.map((card, index) => (
             <DashboardCard 
