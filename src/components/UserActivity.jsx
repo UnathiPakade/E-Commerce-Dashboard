@@ -59,7 +59,7 @@ const UserActivity = () => {
   };
 
   return (
-    <div style={{ width: "50%", maxWidth: "300px", height: "200px", margin: "auto" }}>
+    <div style={{ width: "70%", maxWidth: "400px", height: "200px", margin: "auto" }}>
       <Bar
         data={{
           ...userActivityData,

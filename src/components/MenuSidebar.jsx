@@ -7,7 +7,7 @@ function MenuSidebar() {
   return (
     <div className="Sidebar d-none d-md-block"> 
       <div className="header">
-        <h2><img src={Logo} alt="Logo" /> Hiphonic</h2>
+        <h3><img src={Logo} alt="Logo" /> Hiphonic</h3>
       </div>
       <ul className="List">
         {MenuData.map((val, key) => (

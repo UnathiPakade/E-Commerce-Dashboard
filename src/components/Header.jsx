@@ -11,20 +11,19 @@ const Header = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const cards = [
-    { title: "Monthly Sales", value: "$1,200", trend: "increase", icon: <GiShoppingCart style={{ color: '#f6a723', fontSize: '1.5rem' }} /> },
-    { title: "Total Revenue", value: "$15,000", trend: "decrease", icon: <FaDollarSign style={{ color: '#2563eb', fontSize: '1.5rem' }} /> },
-    { title: "Returns", value: "$200", trend: "decrease", icon: <AiOutlineClockCircle style={{ color: '#ed4f9d', fontSize: '1.5rem' }} /> },
-    { title: "Ad Spend", value: "$2,000", trend: "increase", icon: <AiOutlineDollarCircle style={{ color: '#38bdf8', fontSize: '1.5rem' }} /> },
+    { title: "Monthly Sales", value: "$1,234.00 ", trend: 12, icon: <GiShoppingCart style={{ color: '#f6a723', fontSize: '1.5rem' }} /> },
+    { title: "Total Revenue", value: "$10,566.01 ", trend: 35, icon: <FaDollarSign style={{ color: '#2563eb', fontSize: '1.5rem' }} /> },
+    { title: "Returns", value: "$958.00 ", trend: -5, icon: <AiOutlineClockCircle style={{ color: '#ed4f9d', fontSize: '1.5rem' }} /> },
+    { title: "Ad Spend", value: "$5,566.01 ", trend: 15, icon: <AiOutlineDollarCircle style={{ color: '#38bdf8', fontSize: '1.5rem' }} /> },
   ];
 
-  
   const filteredCards = cards.filter(card =>
     card.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
     <header className="header d-flex flex-column w-100">
-      <div className="d-flex justify-content-between align-items-center p-3 bg-light">
+      <div className="d-flex justify-content-between align-items-center p-2 bg-light">
         <div className="header-left">
           <h2 className="header-title">Overview</h2>
           <p className="header-subtitle">Detailed information about your store</p>
@@ -85,19 +84,28 @@ const Header = () => {
 };
 
 const DashboardCard = ({ title, value, trend, icon }) => {
-  const trendClass = trend === 'increase' ? 'text-success' : 'text-danger';
-  const trendSymbol = trend === 'increase' ? '↑' : '↓';
+  const trendSymbol = trend > 0 ? '+' : '-';
+  const trendColor = trend > 0 ? '#3fd777' : '#ff69b4';
 
   return (
-    <div className="card text-center" style={{ width: 'calc(100% / 4)', padding: '1rem', height: '100%', border: 'none' }}>
-      <div className="d-flex justify-content-center align-items-center mb-2">
-        {icon}
-        <h5 className="card-title ml-2">{title}</h5>
-      </div>
-      <p className="card-value" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
-        {value} <span className={`${trendClass}`}>{trendSymbol} 5%</span>
-      </p>
-    </div>
+    <div className="card text-center" style={{ width: 'calc(100% / 4)', padding: '0rem', height: '50px', border: 'none' }}>
+  <div className="d-flex justify-content-center align-items-center pr-3">
+    {icon} 
+    <h6 className="card-title ms-2 mb-1 text-muted"> {title}</h6> 
+  </div>
+  <p className="card-value " style={{ fontSize: '1.2rem', fontWeight: 'bold', marginRight: '-50px'}}>
+    {value}
+    <span
+      className="font-weight-bold"
+      style={{
+        fontSize: '0.8rem',
+        color: trendColor,
+      }}
+    >
+      {trendSymbol} {Math.abs(trend)}%
+    </span>
+  </p>
+</div>
   );
 };
 

@@ -2,6 +2,7 @@
     background-color: #f8f9fa;
     width: 100%;
     height: auto;
+    max-height: 200px;
     padding-top: 0;
   }
   
@@ -78,4 +79,34 @@
   .highlight {
     border: 2px solid #2196F3; 
     background-color: rgba(33, 150, 243, 0.1); 
+  }
+
+  @media (max-width: 767px) {
+    .header {
+      padding-top: 5px;
+      max-height: 150px;
+      position: relative;
+    }
+  
+    .header-title {
+      font-size: 0.8rem;
+    }
+  
+    .header-subtitle {
+      font-size: 0.8rem;
+    }
+  
+    .input-group {
+      width: 150px;
+    }
+  
+    .dashboard-summary {
+      display: none;
+
+    }
+  
+    .card {
+      display: none;
+    }
+  
   }

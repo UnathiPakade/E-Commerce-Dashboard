@@ -1,10 +1,10 @@
 // mock data
 export const revenueData = {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["January", "February", "March", "April", "May", "June", "July", "Aug", "Sept"],
     datasets: [
       {
         label: "Revenue",
-        data: [15430, 23000, 9000, 34500, 28000, 45000, 22000, 32000, 18000, 26000, 40000, 35000], 
+        data: [15430, 23000, 9000, 34500, 28000, 45000, 22000, 32000, 38000 ], 
         borderColor: "#2196F3",
         backgroundColor: "rgba(76, 175, 80, 0.2)",
         fill: true,
